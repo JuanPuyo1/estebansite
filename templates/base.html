@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    {% block title %}
+    
+    {% endblock %}
+
+    {% block extra_css %}
+    {% endblock %}
+</head>
+<body>
+
+    {% block breadcrumb %}
+    {% endblock %}
+
+
+    <main class="container">
+
+
+        <nav>
+            <ul>
+              <li><strong>Acme Corp</strong></li>
+            </ul>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Products</a></li>
+            </ul>
+          </nav>
+
+          <details open>
+            <summary>Theme</summary>
+            <ul>
+              <li><a href="#" data-theme-switcher="light">Light</a></li>
+              <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+            </ul>
+          </details>
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+
+<script src="{% static 'js/minimal-theme-switcher.js' %}"></script>
+
+{% block extra_scripts %}
+{% endblock %}
+</html>
